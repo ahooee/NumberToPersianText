@@ -56,18 +56,20 @@ public class MyMainClass {
 
             try {
                 //initiate bigDecimal with input String
-                BigDecimal bigDecimal = new BigDecimal(inputBigDeciaml);
+                BigDecimal bigDecimal = new BigDecimal(inputBigDeciaml.split("\\.")[0]);
                 bigDecimal = new BigDecimal(bigDecimal.toPlainString());
 
                 BigDecimal floatPointDecimal = new BigDecimal(0);
 
+                System.out.println(bigDecimal);
                 int floatPointLength = 0;
 
                 //check if the input BigDecimal has float point part
                 if(inputBigDeciaml.contains(".")) {
-                    String float_Part_BigDecimal = bigDecimal.toString().split("\\.")[1];
+                    String float_Part_BigDecimal = inputBigDeciaml.split("\\.")[1];
                     floatPointDecimal = new BigDecimal(float_Part_BigDecimal);
                     floatPointLength = float_Part_BigDecimal.length();
+
                 }
 
                 System.out.println("***********************");
